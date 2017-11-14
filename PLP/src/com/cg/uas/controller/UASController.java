@@ -149,6 +149,7 @@ public class UASController {
 	@RequestMapping("/apply")
 	public String apply(@RequestParam("pId") String pId, Model model) {
 		Application app = new Application();
+		if(!pId.isEmpty())
 		model.addAttribute("pId", pId);
 		model.addAttribute("domainlist", DOMAINS);
 		model.addAttribute("Application", app);

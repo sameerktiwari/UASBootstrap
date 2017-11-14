@@ -8,13 +8,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Success</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+<script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-	<h1>University Admission System - Application Submitted</h1>
-	<h2>Your Application submitted successfully</h2>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li><a href="viewprgrms.htm">View Programmes</a></li>
+      <li><a href="viewstatus.htm">View Status</a></li>
+    </ul>
+  </div>
+</nav>
+	<h1>Your Application submitted successfully</h1>
 	<h2 id="appId">Application ID: ${applicant.applicationId}</h2>
-	<div id="footer">
-		<a href="index.jsp">Home</a>
-	</div>
 </body>
 </html>

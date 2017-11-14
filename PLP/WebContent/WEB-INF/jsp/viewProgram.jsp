@@ -8,11 +8,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>View Program Scheduled</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+    <script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-	<h1>University Admission System - Programmes Scheduled</h1>
-	<h2>Programmes Scheduled for the Winter Session</h2>
-	<table align="center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
+      <li><a href="apply.htm?pId">Apply Here</a></li>
+      <li><a href="viewstatus.htm">View Status</a></li>
+    </ul>
+  </div>
+</nav>
+	<table align="center" class="table table-condensed" style="width: 80%;">
+	<caption style="background-color: black;text-align:center;"><font color="white"><b>Programmes Scheduled for the Winter Session</b></font></caption>
 		<tr>
 			<th>Program Id</th>
 			<th>Program Name</th>
@@ -40,15 +58,11 @@
 					<td><form:hidden path="endDate" value="${prog.endDate}" />${prog.endDate}</td>
 					<td><form:hidden path="sessionsPerWeek"
 							value="${prog.sessionsPerWeek}" />${prog.sessionsPerWeek}</td>
-					<td><input type="submit" value="Apply"></td>
+					<td><input type="submit" value="Apply" class="btn btn-default"></td>
 				</tr>
 			</form:form>
 		</c:forEach>
 
 	</table>
-	<div id="footer">
-		<a href="index.jsp">Home</a>
-	</div>
-	
 </body>
 </html>

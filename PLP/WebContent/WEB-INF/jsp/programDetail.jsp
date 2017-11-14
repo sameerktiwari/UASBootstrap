@@ -8,11 +8,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>View Program Scheduled</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+    <script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-	<h1>University Admission System - Programme Details</h1>
-	<h2>Programs offered by the University</h2>
-	<table align="center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
+      <li><a href="apply.htm?pId">Apply Here</a></li>
+      <li><a href="viewstatus.htm">View Status</a></li>
+    </ul>
+  </div>
+</nav>
+	<table align="center" class="table table-condensed" style="width: 80%;">
+	<caption style="background-color: black;text-align:center;"><font color="white"><b>Programs offered by the University</b></font></caption>
 		<tr>
 			<th>Program Name</th>
 			<th>Description</th>
@@ -29,14 +47,11 @@
 				<td>${prog.degree}</td>
 			</tr>
 			<tr>
-				<td colspan="5"><a href="apply.htm?pId=${pId}"><button>Apply
+				<td colspan="5"><a href="apply.htm?pId=${pId}"><button  class="btn btn-default">Apply
 							here</button></a></td>
 			</tr>
 		</c:if>
 
 	</table>
-	<div id="footer">
-		<a href="index.jsp">Home</a>
-	</div>
 </body>
 </html>

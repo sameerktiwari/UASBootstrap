@@ -6,15 +6,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>MAC</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+<script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-<h1>University Admission System - Member of Admission Committee</h1>
-<div id="nav">
-			<ul>
-				<li><a href="viewapps.htm">View Applications</a></li>
-			</ul>	
-</div>
-
-<div id="footer"><p><a href="index.jsp">Home</a></p></div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li><a href="viewapps.htm">View Programmes</a></li>
+    </ul>
+  </div>
+</nav>
 </body>
 </html>

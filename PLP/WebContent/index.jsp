@@ -17,12 +17,13 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="index.jsp">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
+      <li><a href="viewprgrms.htm">View Programmes</a></li>
+      <li><a href="apply.htm?pId">Apply Here</a></li>
+      <li><a href="viewstatus.htm">View Status</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -31,6 +32,6 @@
 </nav>
   
 <div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+  <h3>University Admission System</h3>
+  <p>Web application for admissions into the university</p>
 </div>
