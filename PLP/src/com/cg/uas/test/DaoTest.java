@@ -30,7 +30,7 @@ public class DaoTest {
 	private UASDAO dao = new UASDAOImpl();
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp(){
 		MockitoAnnotations.initMocks(this);
 	}
 	

@@ -50,7 +50,7 @@ public class UASTest {
 	private UASDAO dao = new UASDAOImpl();
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp(){
 		MockitoAnnotations.initMocks(this);
 		query=Mockito.mock(TypedQuery.class);
 	}
