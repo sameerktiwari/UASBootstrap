@@ -1,3 +1,14 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   View all Scheduled programs which for a particular programs
+ * Functionality: It is a jsp page which will show the  list of available scheduled programs.
+ 					this functionality should be accessible to Member of admission committee only. 
+ * Models Used : UASController.java,ProgramsScheduled.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

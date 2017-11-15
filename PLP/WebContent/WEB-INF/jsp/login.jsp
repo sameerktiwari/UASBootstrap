@@ -1,3 +1,15 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   Login page of the University admission System
+ * Functionality: It is a jsp page which will validate if the user that wants to access
+ *					various functionality is valid.
+ * 
+ * Models Used : UASController.java, Users.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -40,11 +52,12 @@
 				</caption>
 				<tr>
 					<td>LoginId:</td>
-					<td><form:input path="loginId" required="required"/> <form:errors path="loginId" /></td>
+					<td><form:input path="loginId" required="required" /> <form:errors
+							path="loginId" /></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><form:password path="password" required="required"/> <form:errors
+					<td><form:password path="password" required="required" /> <form:errors
 							path="password" /></td>
 				</tr>
 				<tr>

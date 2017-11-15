@@ -1,3 +1,15 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   View Application which is submitted for a scheduled Program.
+ * Functionality: It is a jsp page which will show the Application list for a 
+ * 					scheduled program. This file should be accessible to MAC and 
+ *					administrator only.
+ * Models Used : UASController.java, Participant.java,Application.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

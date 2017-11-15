@@ -1,3 +1,15 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   Details of the program available
+ * Functionality: It is a jsp page which display the various programs attribute which 
+ *					is available in the current University Scope.
+ * 
+ * Models Used : UASController.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
