@@ -48,14 +48,20 @@
 			<tr>
 				<td>Date of Birth:</td>
 				<td><form:input id="dateOfBirth" path="dateOfBirth"
-						required="required" placeholder="yyyy-mm-dd"
+						type="date"required="required" placeholder="yyyy-mm-dd"
 						title="Enter valid Date of Birth" /> <form:errors
 						path="dateOfBirth" /></td>
 			</tr>
 			<tr>
 				<td>Highest Qualification</td>
 				<td><form:select path="highestQualification"
-						items="${domainlist}" required="required"></form:select></td>
+						required="required">
+						<option value="">--Select--</option>
+						<option value="BTech">BTech</option>
+						<option value="MTech">MTech</option>
+						<option value="MBA">MBA</option>
+						<option value="10th/12th">10th/12th</option>
+						</form:select></td>
 			</tr>
 			<tr>
 				<td>Marks Obtained:</td>
@@ -92,7 +98,7 @@
 		<c:if test="${pId ne null}">
 			<form:hidden path="scheduledProgramId" value="${pId}" />
 		</c:if>
-		<!-- msg = scheduledProgramId passed as ModelandView attribute -->
+		<h1 class="bg-info">${msg}</h1>
 	</form:form>
 </body>
 </html>

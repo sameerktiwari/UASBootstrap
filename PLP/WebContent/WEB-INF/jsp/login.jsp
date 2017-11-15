@@ -40,16 +40,16 @@
 				</caption>
 				<tr>
 					<td>LoginId:</td>
-					<td><form:input path="loginId" /> <form:errors path="loginId" /></td>
+					<td><form:input path="loginId" required="required"/> <form:errors path="loginId" /></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><form:password path="password" /> <form:errors
+					<td><form:password path="password" required="required"/> <form:errors
 							path="password" /></td>
 				</tr>
 				<tr>
 					<td>Role:</td>
-					<td><form:select path="role">
+					<td><form:select path="role" required="required">
 							<option value="">--Select--</option>
 							<option value="mac">MAC</option>
 							<option value="admin">ADMIN</option>
