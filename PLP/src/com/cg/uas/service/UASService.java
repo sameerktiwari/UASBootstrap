@@ -3,6 +3,8 @@ package com.cg.uas.service;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
 import com.cg.uas.entities.ProgramsOffered;
@@ -126,4 +128,6 @@ public interface UASService {
 	 */
 	public ProgramsScheduled modify(ProgramsScheduled programsScheduled)
 			throws UniversityException;
+	
+	public void checkUser(HttpSession session,String role) throws UniversityException;
 }

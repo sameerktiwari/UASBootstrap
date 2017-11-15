@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
@@ -26,6 +28,7 @@ import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 import com.cg.uas.service.UASService;
 
+@SessionAttributes("users")
 @Controller
 public class UASController {
 
@@ -45,7 +48,8 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/login")
-	public String getRole(Model model) {
+	public String getRole(Model model,HttpSession session) {
+		session.invalidate();
 		User users = new User();
 		model.addAttribute("users", users);
 		return LOGIN_PAGE;
@@ -63,12 +67,13 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/validate")
-	public String validate(Model model, @ModelAttribute("users") User users,
+	public String validate(Model model, @ModelAttribute("users") User users,HttpSession session,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return LOGIN_PAGE;
 		}
 		if (!service.validate(users)) {
+			session.setAttribute("users", users);
 			return users.getRole();
 		}
 		model.addAttribute(ERROR_MESSAGE_NAME, LOGIN_ERROR_MESSAGE);
@@ -234,8 +239,10 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/viewapps")
-	public String showPrograms(Model model) {
+	public String showPrograms(Model model,HttpSession session) {
+		
 		try {
+			service.checkUser(session,MAC_ROLE);
 			List<ProgramsScheduled> programsScheduled = service
 					.viewProgrammes();
 			model.addAttribute("programList", programsScheduled);
@@ -265,10 +272,11 @@ public class UASController {
 	@RequestMapping("/viewApplications")
 	public String showApplications(
 			Model model,
-			@ModelAttribute("ProgramsScheduled") ProgramsScheduled ProgramsScheduled,
+			@ModelAttribute("ProgramsScheduled") ProgramsScheduled ProgramsScheduled,HttpSession session,
 			BindingResult result) {
 
 		try {
+			service.checkUser(session,MAC_ROLE);
 			List<Application> applications = service
 					.getApplicant(ProgramsScheduled.getScheduledProgrammeId());
 			model.addAttribute("appList", applications);
@@ -297,9 +305,17 @@ public class UASController {
 	 */
 	@RequestMapping("/viewApplication")
 	public String showApplication(Model model,
-			@ModelAttribute("Application") Application app, BindingResult result) {
+			@ModelAttribute("Application") Application app,HttpSession session, BindingResult result) {
+		try{
+		service.checkUser(session,MAC_ROLE);
 		model.addAttribute("applicant", app);
 		return VIEW_APPLICATION;
+		}
+		catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
+			return ERROR_PAGE;
+		}
 	}
 
 	/**
@@ -317,8 +333,9 @@ public class UASController {
 	 */
 	@RequestMapping("/updateStatus")
 	public String updateStatus(@RequestParam("appId") int appId,
-			@RequestParam("status") String status, Model model) {
+			@RequestParam("status") String status,HttpSession session, Model model) {
 		try {
+			service.checkUser(session,MAC_ROLE);
 			Application app = service.getStatus(appId);
 			if (("Pending").equals(app.getStatus())) {
 				if (("Accepted").equals(status)) {
@@ -387,7 +404,7 @@ public class UASController {
 	 */
 	@RequestMapping(value = "/setInterview", method = RequestMethod.POST)
 	public String setInterview(Model model,
-			@ModelAttribute("Application") @Valid Application app,
+			@ModelAttribute("Application") @Valid Application app,HttpSession session,
 			BindingResult result) {
 		try {
 			if (result.hasErrors()) {
@@ -395,6 +412,7 @@ public class UASController {
 				model.addAttribute("showDOI", "y");
 				return VIEW_APPLICATION;
 			}
+			service.checkUser(session,MAC_ROLE);
 			app = service.modify(app, "Accepted");
 			model.addAttribute("applicant", app);
 			model.addAttribute("msg", "Application " + app.getApplicationId()
@@ -417,8 +435,9 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/viewAdminPrgrms")
-	public String showAdminPrograms(Model model) {
+	public String showAdminPrograms(Model model,HttpSession session) {
 		try {
+			service.checkUser(session,ADMIN_ROLE);
 			List<ProgramsScheduled> programsScheduled = service
 					.viewProgrammes();
 			model.addAttribute("programList", programsScheduled);
@@ -444,8 +463,9 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/updatePrgrm")
-	public String loadUpdateProgram(@RequestParam("pId") String pId, Model model) {
+	public String loadUpdateProgram(@RequestParam("pId") String pId,HttpSession session, Model model) {
 		try {
+			service.checkUser(session,ADMIN_ROLE);
 			ProgramsScheduled programsScheduled = service.getProgram(pId);
 			model.addAttribute("prog", programsScheduled);
 			ProgramsScheduled program = new ProgramsScheduled();
@@ -470,9 +490,10 @@ public class UASController {
 	 */
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(
-			@ModelAttribute("programsScheduled") @Valid ProgramsScheduled programsScheduled,
+			@ModelAttribute("programsScheduled") @Valid ProgramsScheduled programsScheduled,HttpSession session,
 			Model model) {
 		try {
+			service.checkUser(session,ADMIN_ROLE);
 			ProgramsScheduled programs = service.modify(programsScheduled);
 			model.addAttribute("message",
 					"Program with Id " + programs.getScheduledProgrammeId()
@@ -497,10 +518,11 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/deletePrgrm")
-	public String deleteProgram(@RequestParam("pId") String pId, Model model) {
+	public String deleteProgram(@RequestParam("pId") String pId,HttpSession session, Model model) {
 		try {
+			service.checkUser(session,ADMIN_ROLE);
 			int status = service.deleteProgram(pId);
-			if (status == 1) {
+			if (1==status) {
 				model.addAttribute("message", "Program with Id " + pId
 						+ " successfully deleted");
 			}

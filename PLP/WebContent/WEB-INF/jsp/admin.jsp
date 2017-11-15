@@ -27,10 +27,13 @@
 			<li><a href="viewAdminPrgrms.htm">View Programmes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>
+			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>ADMIN(Logout)</a></li>
 		</ul>
 	</div>
 	</nav>
-	<h1 class="bg-success">${message}</h1>
+	<h1>Welcome ${sessionScope.users.loginId},</h1>
+	<h3>Logged in as ${sessionScope.users.role}</h3>
+	<h3>Kindly logout when you are done</h3>
+	<h2 class="bg-success">${message}</h2>
 </body>
 </html>

@@ -28,9 +28,12 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="login.htm"><span
-					class="glyphicon glyphicon-log-in"></span>MAC</a></li>
+					class="glyphicon glyphicon-log-in"></span>${sessionScope.users.loginId}(Logout)</a></li>
 		</ul>
 	</div>
 	</nav>
+	<h1>Welcome ${sessionScope.users.loginId},</h1>
+	<h3>Logged in as ${sessionScope.users.role}</h3>
+	<h3>Kindly logout when you are done</h3>
 </body>
 </html>

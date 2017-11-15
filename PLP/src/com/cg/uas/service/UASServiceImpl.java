@@ -3,6 +3,8 @@ package com.cg.uas.service;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -155,5 +157,10 @@ public class UASServiceImpl implements UASService {
 			throws UniversityException {
 		return dao.modify(programsScheduled);
 
+	}
+	
+	@Override
+	public void checkUser(HttpSession session,String role) throws UniversityException{
+		dao.checkUser(session,role);
 	}
 }

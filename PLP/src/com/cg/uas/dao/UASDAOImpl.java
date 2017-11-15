@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
@@ -273,6 +274,14 @@ public class UASDAOImpl implements UASDAO {
 		} catch (Exception e) {
 			logger.error(e);
 			throw new UniversityException(PROGRAM_NOT_UPDATED);
+		}
+	}
+	
+	@Override
+	public void checkUser(HttpSession session,String role) throws UniversityException{
+		User user=(User)session.getAttribute("users");
+		if(!(role).equals(user.getRole())){
+			throw new UniversityException("Unauthorized access");
 		}
 	}
 

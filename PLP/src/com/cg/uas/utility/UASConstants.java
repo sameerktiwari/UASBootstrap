@@ -18,4 +18,6 @@ public interface UASConstants {
 	String VIEW_APPLICATION = "viewApplication";
 	String VIEW_PROGRAMS_FOR_ADMIN = "viewProgramForAdmin";
 	String UPDATE_PROGRAM = "updateProgram";
+	String MAC_ROLE="mac";
+	String ADMIN_ROLE="admin";
 }
