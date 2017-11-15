@@ -1,5 +1,12 @@
 package com.cg.uas.entities;
-
+/************************************************************************************
+ * File:        User.java
+ * Package:     com.cg.uas.entities
+ * Description: Login credential of users which are applicable
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
