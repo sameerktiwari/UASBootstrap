@@ -1,3 +1,14 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   View status of application which was submitted earlier
+ * Functionality: It is a jsp page which will show status of application if you know the 
+ 					application number. This is public accessible 
+ * Models Used : UASController.java,ProgramsScheduled.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

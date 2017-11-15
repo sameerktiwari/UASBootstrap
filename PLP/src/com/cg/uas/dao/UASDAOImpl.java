@@ -1,5 +1,14 @@
 package com.cg.uas.dao;
 
+/************************************************************************************
+ * File:        UASDAOImpl.java
+ * Package:     com.cg.uas.dao
+ * Description: Implementation of data access object interface "UASDAO.java" for
+ * 				 University Admission System
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import static com.cg.uas.utility.UASDAOConstants.*;
 
 import java.sql.Date;

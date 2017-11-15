@@ -1,5 +1,16 @@
 package com.cg.uas.entities;
 
+/************************************************************************************
+ * File:        ProgramsScheduled.java
+ * Package:     com.cg.uas.entities
+ * Description: If a Program is there then when the program will be
+ *         operating like same program can be scheduled in different year i.e.
+ *         just like semester if we have programming in the 2010 the same course
+ *         may be scheduled for 2011 if the university continues to fund it
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -8,13 +19,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * @author GroupNo.5 If a Program is there then when the program will be
- *         operating like same program can be scheduled in different year i.e.
- *         just like semester if we have programming in the 2010 the same course
- *         may be scheduled for 2011 if the university continues to fund it.
- *
- */
 @Entity
 @Table(name = "Programs_Scheduled")
 public class ProgramsScheduled implements Serializable {

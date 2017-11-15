@@ -1,3 +1,14 @@
+<%--  
+ ***************************************************************************************
+ * Description  :   Administrator page of the application
+ * Functionality: It is a jsp page which display the various option for Administrator
+ * 
+ * Models Used : UASController.java
+ * Restrictions: 
+ * Creation date: (09/11/2017)
+ * Modifications:
+ * Author: Group5       Date: 14-Nov-2017         Change Description:
+ ************************************************************************************** --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
