@@ -71,5 +71,6 @@
 		</c:forEach>
 
 	</table>
+	<h3>Click on Program name to get the details of the program scheduled</h3>
 </body>
 </html>

@@ -151,7 +151,6 @@ public class UASController {
 		Application app = new Application();
 		if (!pId.isEmpty())
 			model.addAttribute("pId", pId);
-		model.addAttribute("domainlist", DOMAINS);
 		model.addAttribute("Application", app);
 		return APPLICATION;
 	}
@@ -175,6 +174,13 @@ public class UASController {
 			return APPLICATION;
 		}
 		try {
+			ProgramsScheduled ps=service.getProgram(app.getScheduledProgramId());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
+			return APPLICATION;
+		}
+		try{
 			Application ap = service.save(app);
 			model.addAttribute("applicant", ap);
 			return SUCCESS_PAGE;

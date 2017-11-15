@@ -16,7 +16,7 @@ public interface UASDAOConstants {
 	static String INTERVIEW_DATE_NOT_SCHEDULED = "Problem in Updating Date of Interview";
 	static String PARTICIPANT_ADDED = "Participant Added";
 	static String PARTICIPANT_NOT_ADDED = "Problem in adding participant";
-	static String INVALID_PROGRAMID = "Invalid ProgramId";
+	static String INVALID_PROGRAMID = "Please enter valid Scheduled ProgramId";
 	static String PROGRAM_DELETED = "Program Deleted";
 	static String PROGRAM_NOT_DELETED = "Program does not exist";
 	static String PROGRAM_UPDATED = "Program updated";
