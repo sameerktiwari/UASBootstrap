@@ -45,7 +45,11 @@ public class UASController {
 
 	@Autowired
 	private UASService service;
-
+	@RequestMapping("/index")
+	public String home(Model model,HttpSession session) {
+		session.invalidate();
+		return HOME_PAGE;
+	}
 	/**
 	 * Gets the role of the user
 	 * 
@@ -187,7 +191,7 @@ public class UASController {
 			return APPLICATION;
 		}
 		try {
-			ProgramsScheduled ps = service.getProgram(app
+			service.getProgram(app
 					.getScheduledProgramId());
 		} catch (UniversityException exception) {
 			logger.error(exception);
@@ -314,7 +318,7 @@ public class UASController {
 	 */
 	@RequestMapping("/viewApplication")
 	public String showApplication(Model model,
-			@ModelAttribute("Application") Application app,HttpSession session, BindingResult result) {
+			@ModelAttribute("Application") Application app, BindingResult result,HttpSession session) {
 		try{
 		service.checkUser(session,MAC_ROLE);
 		model.addAttribute("applicant", app);
@@ -413,8 +417,8 @@ public class UASController {
 	 */
 	@RequestMapping(value = "/setInterview", method = RequestMethod.POST)
 	public String setInterview(Model model,
-			@ModelAttribute("Application") @Valid Application app,HttpSession session,
-			BindingResult result) {
+			@ModelAttribute("Application") @Valid Application app,
+			BindingResult result,HttpSession session) {
 		try {
 			if (result.hasErrors()) {
 				model.addAttribute("applicant", app);
@@ -499,7 +503,7 @@ public class UASController {
 	 */
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(
-			@ModelAttribute("programsScheduled") @Valid ProgramsScheduled programsScheduled,HttpSession session,
+			@ModelAttribute("programsScheduled") ProgramsScheduled programsScheduled,HttpSession session,
 			Model model) {
 		try {
 			service.checkUser(session,ADMIN_ROLE);
@@ -542,6 +546,12 @@ public class UASController {
 			return ERROR_PAGE;
 
 		}
+	}
+	
+	@RequestMapping("/returnHome")
+	public String returnHome(HttpSession session, Model model) {
+			String role=((User)session.getAttribute("users")).getRole();
+			return role;
 	}
 
 }

@@ -30,15 +30,15 @@
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.jsp">University Admission
+			<a class="navbar-brand" href="index.htm">University Admission
 				System</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="index.jsp">Home</a></li>
+			<li><a href="returnHome.htm">Home</a></li>
 			<li><a href="viewAdminPrgrms.htm">View Programmes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>ADMIN(Logout)</a></li>
+			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>${sessionScope.users.loginId}(Logout)</a></li>
 		</ul>
 	</div>
 	</nav>

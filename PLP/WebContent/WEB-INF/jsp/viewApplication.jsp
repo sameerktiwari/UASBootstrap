@@ -34,11 +34,11 @@
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.jsp">University Admission
+			<a class="navbar-brand" href="index.htm">University Admission
 				System</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="index.jsp">Home</a></li>
+			<li><a href="returnHome.htm">Home</a></li>
 			<li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -105,7 +105,7 @@
 			<form:hidden path="status" value="${applicant.status}" />
 			<p>
 				Enter Date of Interview:
-				<form:input id="dateOfInterview" path="dateOfInterview" />
+				<form:input id="dateOfInterview" path="dateOfInterview" required="required"/>
 				<input class="btn btn-default" type="submit"
 					value="Schedule Interview" onclick="return isAfter()">
 				<form:errors path="dateOfInterview" />

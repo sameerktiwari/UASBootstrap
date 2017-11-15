@@ -20,4 +20,5 @@ public interface UASConstants {
 	String UPDATE_PROGRAM = "updateProgram";
 	String MAC_ROLE="mac";
 	String ADMIN_ROLE="admin";
+	String HOME_PAGE="index";
 }
