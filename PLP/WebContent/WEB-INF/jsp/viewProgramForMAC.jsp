@@ -40,7 +40,7 @@
 			<li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>MAC(Logout)</a></li>
+			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>${sessionScope.users.loginId}(Logout)</a></li>
 		</ul>
 	</div>
 	</nav>
