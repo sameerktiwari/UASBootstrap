@@ -29,7 +29,7 @@
   </div>
 </nav>
 	<form action="getStatus.htm">
-		<table align="center" class="table table-condensed" style="width: 60%;">
+		<table align="center" class="table table-condensed" style="width: 50%;">
 		<caption style="background-color: black;text-align:center;"><font color="white"><b>Application Status</b></font></caption>
 			<tr>
 				<td>Enter your Application ID:</td>

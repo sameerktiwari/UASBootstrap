@@ -30,7 +30,7 @@
 </nav>
 <form:form action="validate.htm" method="post" modelAttribute="users">
 <div class="container" >
-<table align="center" class="table table-condensed" style="width: 50%;">
+<table align="center" class="table table-condensed" style="width: 40%;">
 <caption style="background-color: black;text-align:center;"><font color="white"><b>Enter your LoginId and Password</b></font></caption>
 			<tr>
 				<td>LoginId:</td>

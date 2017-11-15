@@ -23,6 +23,9 @@
       <li><a href="index.jsp">Home</a></li>
       <li><a href="viewapps.htm">View Programmes</a></li>
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>MAC</a></li>
+    </ul>
   </div>
 </nav>
 </body>

@@ -15,7 +15,5 @@
 				<li><a href="viewstatus.htm">View Status</a></li>
 			</ul>	
 </div>
-
-<div id="footer"><a href="index.jsp">Home</a></div>
 </body>
 </html>

@@ -9,10 +9,30 @@
 <title>Application ${applicant.applicationId}</title>
 <script><%@include file="/WEB-INF/js/validateDate.js" %></script>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+    <script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-	<h1>University Admission System - Application ${applicant.applicationId}</h1>
-	<table  align="center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> MAC</a></li>
+    </ul>
+  </div>
+</nav>
+	<table align="center" class="table table-condensed" style="width: 60%;">
+	<caption style="background-color: black;text-align:center;"><font color="white"><b>Application ${applicant.applicationId}</b></font></caption>
 		<tr>
 			<th>Application ID</th>
 			<th>Full Name</th>
@@ -38,9 +58,9 @@
 					<td>${applicant.dateOfInterview}</td>
 				</tr>
 				</table>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Accepted"><input type="button" value="Accept" style="background-color:blue;color:white"></a>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Rejected"><input type="button" value="Reject" style="background-color:green;color:white"></a>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Confirmed"><input type="button" value="Confirm" style="background-color:red;color:white"></a>
+	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Accepted"><input  class="btn btn-primary" type="button" value="Accept"></a>
+	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Rejected"><input class="btn btn-success" type="button" value="Reject"></a>
+	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Confirmed"><input  class="btn btn-danger" type="button" value="Confirm"></a>
 	<c:if test="${msg ne null}">"${msg}"</c:if>
 	<c:if test="${showDOI ne null}"><form:form action="setInterview.htm" modelAttribute="Application" method="post">
 	<form:hidden path="applicationId"
@@ -57,10 +77,7 @@
 					<form:hidden path="scheduledProgramId"
 							value="${applicant.scheduledProgramId}" />
 					<form:hidden path="status" value="${applicant.status}" />
-	<p>Enter Date of Interview: <form:input  id="dateOfInterview" path="dateOfInterview"/><input type="submit" value="Schedule Interview" onclick="return isAfter()"><form:errors path="dateOfInterview"/></p>
+	<p>Enter Date of Interview: <form:input  id="dateOfInterview" path="dateOfInterview"/><input class="btn btn-default" type="submit" value="Schedule Interview" onclick="return isAfter()"><form:errors path="dateOfInterview"/></p>
 	</form:form></c:if>
-<div id="footer">
-		<a href="index.jsp">Home</a>
-	</div>
 </body>
 </html>

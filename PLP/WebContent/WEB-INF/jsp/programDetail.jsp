@@ -29,7 +29,7 @@
     </ul>
   </div>
 </nav>
-	<table align="center" class="table table-condensed" style="width: 80%;">
+	<table align="center" class="table table-condensed" style="width: 70%;">
 	<caption style="background-color: black;text-align:center;"><font color="white"><b>Programs offered by the University</b></font></caption>
 		<tr>
 			<th>Program Name</th>

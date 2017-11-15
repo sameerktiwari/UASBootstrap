@@ -31,7 +31,7 @@
   </div>
 </nav>
 	<form:form action="add.htm" method="post" modelAttribute="Application">
-		<table align="center" class="table table-condensed" style="width: 70%;">
+		<table align="center" class="table table-condensed" style="width: 50%;">
 		<caption style="background-color: black;text-align:center;"><font color="white"><b>Enter Your Details</b></font></caption>
 			<tr>
 				<td>Full name:</td>

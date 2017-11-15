@@ -8,10 +8,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Applications</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+    <script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-<h1>University Admission System - Applications</h1>
-	<table align="center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> MAC</a></li>
+    </ul>
+  </div>
+</nav>
+	<table align="center" class="table table-condensed" style="width: 60%;">
+	<caption style="background-color: black;text-align:center;"><font color="white"><b>Programmes Scheduled for the Winter Session</b></font></caption>
 		<tr>
 			<th>Application ID</th>
 			<th>Full Name</th>
@@ -50,8 +70,5 @@
 			</form:form>
 		</c:forEach>
 	</table>
-	<div id="footer">
-		<a href="index.jsp">Home</a>
-	</div>
 </body>
 </html>

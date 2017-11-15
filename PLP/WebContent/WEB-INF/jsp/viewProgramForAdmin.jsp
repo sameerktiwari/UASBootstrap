@@ -8,11 +8,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin - Programs Scheduled</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/bootstrap.min.js">
+</script>
+    <script src="js/jquery-3.2.1.min.js">
+</script>
 </head>
 <body>
-<h1>University Admission System - Programmes Scheduled</h1>
-	<h2>Program Scheduled for the Winter Session</h2>
-	<table align="center">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">University Admission System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.jsp">Home</a></li>
+      <li class="active"><a href="viewAdminPrgrms.htm">View Programmes</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>
+    </ul>
+  </div>
+</nav>
+	<table align="center" class="table table-condensed" style="width: 60%;">
+	<caption style="background-color: black;text-align:center;"><font color="white"><b>Programmes Scheduled for the Winter Session</b></font></caption>
 		<tr>
 			<th>Program Id</th>
 			<th>Program Name</th>
@@ -32,13 +51,10 @@
 					<td>${prog.startDate}</td>
 					<td>${prog.endDate}</td>
 					<td>${prog.sessionsPerWeek}</td>
-					<td><a href="updatePrgrm.htm?pId=${prog.scheduledProgrammeId}"><input type="button" value="Update" style="background-color:blue;color:white"></a></td>
-					<td><a href="deletePrgrm.htm?pId=${prog.scheduledProgrammeId}"><input type="button" value="Delete" style="background-color:blue;color:white"></a></td>
+					<td><a href="updatePrgrm.htm?pId=${prog.scheduledProgrammeId}"><input  class="btn btn-info" type="button" value="Update"></a></td>
+					<td><a href="deletePrgrm.htm?pId=${prog.scheduledProgrammeId}"><input  class="btn btn-warning" type="button" value="Delete"></a></td>
 				</tr>
 		</c:forEach>
 	</table>
-<div id="footer">
-		<a href="index.jsp">Home</a>
-</div>	
 </body>
 </html>
