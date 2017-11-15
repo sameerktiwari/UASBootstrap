@@ -12,6 +12,7 @@
 <div id="nav">
 			<ul>
 				<li><a href="viewprgrms.htm">View Programmes</a></li>
+				<li><a href="apply.htm?pId">Apply Here</a></li>
 				<li><a href="viewstatus.htm">View Status</a></li>
 			</ul>	
 </div>

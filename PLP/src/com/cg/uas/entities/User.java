@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 	@Id
 	@Column(name = "login_id")
 	String loginId;
@@ -40,14 +40,14 @@ public class Users {
 		this.role = role;
 	}
 
-	public Users(String loginId, String password, String role) {
+	public User(String loginId, String password, String role) {
 		super();
 		this.loginId = loginId;
 		this.password = password;
 		this.role = role;
 	}
 
-	public Users() {
+	public User() {
 		super();
 	}
 }

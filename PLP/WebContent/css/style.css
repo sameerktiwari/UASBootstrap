@@ -6,7 +6,7 @@ h1 {
 }
 
 h2 {
-	color: white;
+	color: navy;
 	
 }
 #appId{
@@ -38,42 +38,6 @@ a:hover, a:active {
 	display: inline-block;
 	position: relative;
 	margin: 30px;
-}
-
-#nav ul {
-	
-}
-
-#nav ul li {
-	display: inline-block;
-	padding: 50px;
-}
-
-#nav ul li a {
-	padding: 20px;
-	background: orange;
-	color: white;
-}
-
-#nav ul li a:hover {
-	background-color: #ffb424;
-	box-shadow: 0px 1px 1px #666;
-}
-
-#nav ul li a:active {
-	background-color: #ff8f00;
-}
-
-#home {
-	display: inline-block;
-	padding: 50px;
-	float: left;
-}
-
-#nav a {
-	padding: 20px;
-	background: navy;
-	color: white;
 }
 
 table{

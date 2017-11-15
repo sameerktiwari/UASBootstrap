@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cg.uas.dao.UASDAO;
 import com.cg.uas.entities.Application;
-import com.cg.uas.entities.Users;
+import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -23,13 +23,13 @@ public class DAOImplTest {
 	
 	@Test
 	public void testValidate() {
-		Users user=new Users("akash","akash","mac");
+		User user=new User("akash","akash","mac");
 		assertEquals(false, dao.validate(user));
 	}
 	
 	@Test
 	public void testGetStatus() throws UniversityException{
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "Bachelor of Technology", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
+		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
 		application=dao.save(application);
 		assertEquals("Pending", dao.modify(application, "Accepted").getStatus());
 	}

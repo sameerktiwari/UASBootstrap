@@ -31,7 +31,10 @@
   </div>
 </nav>
   
-<div class="container">
+<div class="container" align="center">
   <h3>University Admission System</h3>
-  <p>Web application for admissions into the university</p>
+  <p>Web application for admissions into the university</p>            
+  <img src="images/bckgrnd.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
 </div>
+</body>
+</html>

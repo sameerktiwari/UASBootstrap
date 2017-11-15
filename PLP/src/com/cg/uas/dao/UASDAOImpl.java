@@ -18,7 +18,7 @@ import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
 import com.cg.uas.entities.ProgramsOffered;
 import com.cg.uas.entities.ProgramsScheduled;
-import com.cg.uas.entities.Users;
+import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 import com.cg.uas.utility.QueryMapper;
 
@@ -37,13 +37,13 @@ public class UASDAOImpl implements UASDAO {
 	 * @see com.cg.uas.dao.IDAO#validate(com.cg.uas.entities.Users)
 	 */
 	@Override
-	public boolean validate(Users user) {
-		TypedQuery<Users> query = entityManager.createQuery(QueryMapper.users,
-				Users.class);
+	public boolean validate(User user) {
+		TypedQuery<User> query = entityManager.createQuery(QueryMapper.users,
+				User.class);
 		query.setParameter("ploginid", user.getLoginId());
 		query.setParameter("ppwd", user.getPassword());
 		query.setParameter("prole", user.getRole());
-		List<Users> users = query.getResultList();
+		List<User> users = query.getResultList();
 		logger.info(LOGGED_IN);
 		return users.isEmpty();
 	}

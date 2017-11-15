@@ -28,6 +28,6 @@
     </ul>
   </div>
 </nav>
-<h1>${message}</h1>
+<h1 class="bg-success">${message}</h1>
 </body>
 </html>

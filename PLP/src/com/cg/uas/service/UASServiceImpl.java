@@ -11,7 +11,7 @@ import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
 import com.cg.uas.entities.ProgramsOffered;
 import com.cg.uas.entities.ProgramsScheduled;
-import com.cg.uas.entities.Users;
+import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 
 @Service
@@ -25,7 +25,7 @@ public class UASServiceImpl implements UASService {
 	 * @see com.cg.uas.service.IService#validate(com.cg.uas.entities.Users)
 	 */
 	@Override
-	public boolean validate(Users user) {
+	public boolean validate(User user) {
 		return dao.validate(user);
 	}
 

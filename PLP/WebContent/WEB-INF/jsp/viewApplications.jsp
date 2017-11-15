@@ -65,7 +65,7 @@
 					<td><form:hidden path="status" value="${appli.status}" />${appli.status}</td>
 					<td><form:hidden path="dateOfInterview"
 							value="${appli.dateOfInterview}" />${appli.dateOfInterview}</td>
-					<td><input type="submit" value="View Application"></td>
+					<td><input class="btn btn-default" type="submit" value="View Application"></td>
 				</tr>
 			</form:form>
 		</c:forEach>

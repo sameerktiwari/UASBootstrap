@@ -22,7 +22,7 @@ import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
 import com.cg.uas.entities.ProgramsOffered;
 import com.cg.uas.entities.ProgramsScheduled;
-import com.cg.uas.entities.Users;
+import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 import com.cg.uas.service.UASService;
 
@@ -46,7 +46,7 @@ public class UASController {
 	 */
 	@RequestMapping("/login")
 	public String getRole(Model model) {
-		Users users = new Users();
+		User users = new User();
 		model.addAttribute("users", users);
 		return LOGIN_PAGE;
 	}
@@ -63,7 +63,7 @@ public class UASController {
 	 * @return
 	 */
 	@RequestMapping("/validate")
-	public String validate(Model model, @ModelAttribute("users") Users users,
+	public String validate(Model model, @ModelAttribute("users") User users,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return LOGIN_PAGE;
@@ -102,9 +102,9 @@ public class UASController {
 			ProgramsScheduled programs = new ProgramsScheduled();
 			model.addAttribute("ProgramsScheduled", programs);
 			return VIEW_ALL_PROGRAMS;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}
@@ -129,9 +129,9 @@ public class UASController {
 			model.addAttribute("prog", pos);
 			model.addAttribute("pId", pId);
 			return VIEW_PROGRAM_DETAILS;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -178,9 +178,9 @@ public class UASController {
 			Application ap = service.save(app);
 			model.addAttribute("applicant", ap);
 			return SUCCESS_PAGE;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -212,9 +212,9 @@ public class UASController {
 			model.addAttribute("applicant", app);
 			return VIEW_STATUS;
 
-		} catch (UniversityException | NumberFormatException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException | NumberFormatException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -236,9 +236,9 @@ public class UASController {
 			ProgramsScheduled programs = new ProgramsScheduled();
 			model.addAttribute("ProgramsScheduled", programs);
 			return VIEW_PROGRAMS_FOR_MAC;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -271,9 +271,9 @@ public class UASController {
 			Application app = new Application();
 			model.addAttribute("Application", app);
 			return VIEW_APPLICATIONS_FOR_A_PROGRAM;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -359,9 +359,9 @@ public class UASController {
 			model.addAttribute("msg", "Not Applicable");
 			model.addAttribute("applicant", app);
 			return VIEW_APPLICATION;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 		}
 	}
@@ -394,9 +394,9 @@ public class UASController {
 			model.addAttribute("msg", "Application " + app.getApplicationId()
 					+ " accepted and Interview Scheduled");
 			return VIEW_APPLICATION;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}
@@ -419,9 +419,9 @@ public class UASController {
 			ProgramsScheduled programs = new ProgramsScheduled();
 			model.addAttribute("ProgramsScheduled", programs);
 			return VIEW_PROGRAMS_FOR_ADMIN;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}
@@ -445,9 +445,9 @@ public class UASController {
 			ProgramsScheduled program = new ProgramsScheduled();
 			model.addAttribute("programsScheduled", program);
 			return UPDATE_PROGRAM;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}
@@ -472,9 +472,9 @@ public class UASController {
 					"Program with Id " + programs.getScheduledProgrammeId()
 							+ " successfully modified");
 			return ADMIN_HOME;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}
@@ -499,9 +499,9 @@ public class UASController {
 						+ " successfully deleted");
 			}
 			return ADMIN_HOME;
-		} catch (UniversityException e) {
-			logger.error(e);
-			model.addAttribute(ERROR_MESSAGE_NAME, e.getMessage());
+		} catch (UniversityException exception) {
+			logger.error(exception);
+			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return ERROR_PAGE;
 
 		}

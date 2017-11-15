@@ -28,7 +28,7 @@
     </ul>
   </div>
 </nav>
-	<h1>Your Application submitted successfully</h1>
-	<h2 id="appId">Application ID: ${applicant.applicationId}</h2>
+	<h1 class="bg-success">Your Application submitted successfully</h1>
+	<h2 class="bg-info" style="color:lightblue;">Application ID: ${applicant.applicationId}</h2>
 </body>
 </html>

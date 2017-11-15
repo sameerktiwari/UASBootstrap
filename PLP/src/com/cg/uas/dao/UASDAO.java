@@ -7,7 +7,7 @@ import com.cg.uas.entities.Application;
 import com.cg.uas.entities.Participant;
 import com.cg.uas.entities.ProgramsOffered;
 import com.cg.uas.entities.ProgramsScheduled;
-import com.cg.uas.entities.Users;
+import com.cg.uas.entities.User;
 import com.cg.uas.exception.UniversityException;
 
 /**
@@ -22,7 +22,7 @@ public interface UASDAO {
 	 * @return
 	 * @throws UniversityException
 	 */
-	public boolean validate(Users user);
+	public boolean validate(User user);
 
 	/**
 	 * @return

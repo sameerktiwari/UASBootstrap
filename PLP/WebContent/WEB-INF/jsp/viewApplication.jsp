@@ -61,7 +61,7 @@
 	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Accepted"><input  class="btn btn-primary" type="button" value="Accept"></a>
 	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Rejected"><input class="btn btn-success" type="button" value="Reject"></a>
 	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Confirmed"><input  class="btn btn-danger" type="button" value="Confirm"></a>
-	<c:if test="${msg ne null}">"${msg}"</c:if>
+	<c:if test="${msg ne null}"><h2 class="bg-success" style="color:lightblue;">${msg}</h2></c:if>
 	<c:if test="${showDOI ne null}"><form:form action="setInterview.htm" modelAttribute="Application" method="post">
 	<form:hidden path="applicationId"
 							value="${applicant.applicationId}" />

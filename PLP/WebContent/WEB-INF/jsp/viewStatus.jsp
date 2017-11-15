@@ -40,7 +40,7 @@
 			</tr>
 		</table>
 		<c:if test="${applicant ne null}">
-			<h3>Your Application status: ${applicant.status}</h3>
+			<h3 class="bg-success">Your Application status: ${applicant.status}</h3>
 			<table align="center"  class="table table-striped" style="width: 60%;">
 				<tr>
 					<td>Application ID:</td>

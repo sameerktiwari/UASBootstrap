@@ -29,6 +29,6 @@
     </ul>
   </div>
 </nav>
-<h2 id="appId">Error Occured: ${msg}</h2>
+<h2 class="bg-info">Error Occured: ${msg}</h2>
 </body>
 </html>

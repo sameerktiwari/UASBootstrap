@@ -25,8 +25,8 @@
     <ul class="nav navbar-nav">
       <li><a href="index.jsp">Home</a></li>
       <li><a href="viewprgrms.htm">View Programmes</a></li>
-      <li><a href="viewstatus.htm">View Status</a></li>
       <li class="active"><a href="apply.htm?pId">Apply Here</a></li>
+      <li><a href="viewstatus.htm">View Status</a></li>
     </ul>
   </div>
 </nav>
