@@ -32,9 +32,13 @@
 </nav>
   
 <div class="container" align="center">
-  <h3>University Admission System</h3>
-  <p>Web application for admissions into the university</p>            
-  <img src="images/bckgrnd.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
+  <h1>Welcome to Central University</h1>           
+  <img src="images/bckgrnd.jpg" class="img-rounded" alt="Cinque Terre" width="900" height="400"/> 
+  <hr/>
+    <p style="width:80%;">The Central University is a autonomous public institute of higher education, located in India. It is governed by the National Institutes of Technology Act, 2007, which declared it as institute of national importance alongside Indian Institutes of Technology and National Institute of Technology. 
+    These institutes of national importance receive special recognition from the Government of India. The NIT Council is the supreme governing body of India's National Institutes of Technology (NIT) system and all 31 NITs are funded by the Government of India. These institutes are among the top ranked engineering colleges in India and have one of the lowest acceptance rates for engineering institutes, of around 2 to 3 percent, second only to the Indian Institutes of Technology (IITs) in India. All NITs are autonomous which enables them to set up their own curriculum.
+Central University offers degree courses at bachelors and masters levels in various branches of engineering and management. Admission to the under-graduate courses such as Bachelor of Technology (B.Tech.) in the university is through the highly competitive Joint Entrance Examination (Main). Admission to postgraduate courses are through the Graduate Aptitude Test in Engineering for Master of Technology (M.Tech.) program and Common Admission Test for Master of Business Administration (MBA) program.
+</p>
 </div>
 </body>
 </html>

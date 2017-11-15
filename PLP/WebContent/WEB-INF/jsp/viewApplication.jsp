@@ -9,30 +9,37 @@
 <title>Application ${applicant.applicationId}</title>
 <script><%@include file="/WEB-INF/js/validateDate.js" %></script>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="js/bootstrap.min.js">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="js/bootstrap.min.js">
+	
 </script>
-    <script src="js/jquery-3.2.1.min.js">
+<script src="js/jquery-3.2.1.min.js">
+	
 </script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp">University Admission System</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.jsp">Home</a></li>
-      <li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> MAC</a></li>
-    </ul>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.jsp">University Admission
+				System</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="index.jsp">Home</a></li>
+			<li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+					MAC</a></li>
+		</ul>
+	</div>
+	</nav>
 	<table align="center" class="table table-condensed" style="width: 60%;">
-	<caption style="background-color: black;text-align:center;"><font color="white"><b>Application ${applicant.applicationId}</b></font></caption>
+		<caption style="background-color: black; text-align: center;">
+			<font color="white"><b>Application
+					${applicant.applicationId}</b></font>
+		</caption>
 		<tr>
 			<th>Application ID</th>
 			<th>Full Name</th>
@@ -45,39 +52,53 @@
 			<th>Status</th>
 			<th>Date of Interview</th>
 		</tr>
-				<tr>
-					<td>${applicant.applicationId}</td>
-					<td>${applicant.fullName}</td>
-					<td>${applicant.dateOfBirth}</td>
-					<td>${applicant.highestQualification}</td>
-					<td>${applicant.marksObtained}</td>
-					<td>${applicant.email}</td>
-					<td>${applicant.goals}</td>
-					<td>${applicant.scheduledProgramId}</td>
-					<td>${applicant.status}</td>
-					<td>${applicant.dateOfInterview}</td>
-				</tr>
-				</table>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Accepted"><input  class="btn btn-primary" type="button" value="Accept"></a>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Rejected"><input class="btn btn-success" type="button" value="Reject"></a>
-	<a href="updateStatus.htm?appId=${applicant.applicationId}&status=Confirmed"><input  class="btn btn-danger" type="button" value="Confirm"></a>
-	<c:if test="${msg ne null}"><h2 class="bg-success" style="color:lightblue;">${msg}</h2></c:if>
-	<c:if test="${showDOI ne null}"><form:form action="setInterview.htm" modelAttribute="Application" method="post">
-	<form:hidden path="applicationId"
-							value="${applicant.applicationId}" />
-					<form:hidden path="fullName" value="${applicant.fullName}" />
-					<form:hidden path="dateOfBirth"
-							value="${applicant.dateOfBirth}" />
-					<form:hidden path="highestQualification"
-							value="${applicant.highestQualification}" />
-					<form:hidden path="marksObtained"
-							value="${applicant.marksObtained}" />
-					<form:hidden path="email" value="${applicant.email}" />
-					<form:hidden path="goals" value="${applicant.goals}" />
-					<form:hidden path="scheduledProgramId"
-							value="${applicant.scheduledProgramId}" />
-					<form:hidden path="status" value="${applicant.status}" />
-	<p>Enter Date of Interview: <form:input  id="dateOfInterview" path="dateOfInterview"/><input class="btn btn-default" type="submit" value="Schedule Interview" onclick="return isAfter()"><form:errors path="dateOfInterview"/></p>
-	</form:form></c:if>
+		<tr>
+			<td>${applicant.applicationId}</td>
+			<td>${applicant.fullName}</td>
+			<td>${applicant.dateOfBirth}</td>
+			<td>${applicant.highestQualification}</td>
+			<td>${applicant.marksObtained}</td>
+			<td>${applicant.email}</td>
+			<td>${applicant.goals}</td>
+			<td>${applicant.scheduledProgramId}</td>
+			<td>${applicant.status}</td>
+			<td>${applicant.dateOfInterview}</td>
+		</tr>
+	</table>
+	<a
+		href="updateStatus.htm?appId=${applicant.applicationId}&status=Accepted"><input
+		class="btn btn-primary" type="button" value="Accept"></a>
+	<a
+		href="updateStatus.htm?appId=${applicant.applicationId}&status=Rejected"><input
+		class="btn btn-success" type="button" value="Reject"></a>
+	<a
+		href="updateStatus.htm?appId=${applicant.applicationId}&status=Confirmed"><input
+		class="btn btn-danger" type="button" value="Confirm"></a>
+	<c:if test="${msg ne null}">
+		<h2 class="bg-success" style="color: lightblue;">${msg}</h2>
+	</c:if>
+	<c:if test="${showDOI ne null}">
+		<form:form action="setInterview.htm" modelAttribute="Application"
+			method="post">
+			<form:hidden path="applicationId" value="${applicant.applicationId}" />
+			<form:hidden path="fullName" value="${applicant.fullName}" />
+			<form:hidden path="dateOfBirth" value="${applicant.dateOfBirth}" />
+			<form:hidden path="highestQualification"
+				value="${applicant.highestQualification}" />
+			<form:hidden path="marksObtained" value="${applicant.marksObtained}" />
+			<form:hidden path="email" value="${applicant.email}" />
+			<form:hidden path="goals" value="${applicant.goals}" />
+			<form:hidden path="scheduledProgramId"
+				value="${applicant.scheduledProgramId}" />
+			<form:hidden path="status" value="${applicant.status}" />
+			<p>
+				Enter Date of Interview:
+				<form:input id="dateOfInterview" path="dateOfInterview" />
+				<input class="btn btn-default" type="submit"
+					value="Schedule Interview" onclick="return isAfter()">
+				<form:errors path="dateOfInterview" />
+			</p>
+		</form:form>
+	</c:if>
 </body>
 </html>

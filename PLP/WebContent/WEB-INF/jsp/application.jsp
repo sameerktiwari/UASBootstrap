@@ -8,31 +8,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Application</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="js/bootstrap.min.js">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="js/bootstrap.min.js">
+	
 </script>
 <script src="js/jquery-3.2.1.min.js">
+	
 </script>
 <script><%@include file="/WEB-INF/js/validateDate.js" %></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp">University Admission System</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="viewprgrms.htm">View Programmes</a></li>
-      <li class="active"><a href="apply.htm?pId">Apply Here</a></li>
-      <li><a href="viewstatus.htm">View Status</a></li>
-    </ul>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.jsp">University Admission
+				System</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="index.jsp">Home</a></li>
+			<li><a href="viewprgrms.htm">View Programmes</a></li>
+			<li class="active"><a href="apply.htm?pId">Apply Here</a></li>
+			<li><a href="viewstatus.htm">View Status</a></li>
+		</ul>
+	</div>
+	</nav>
 	<form:form action="add.htm" method="post" modelAttribute="Application">
-		<table align="center" class="table table-condensed" style="width: 50%;">
-		<caption style="background-color: black;text-align:center;"><font color="white"><b>Enter Your Details</b></font></caption>
+		<table align="center" class="table table-condensed"
+			style="width: 50%;">
+			<caption style="background-color: black; text-align: center;">
+				<font color="white"><b>Enter Your Details</b></font>
+			</caption>
 			<tr>
 				<td>Full name:</td>
 				<td><form:input path="fullName" pattern="[A-Za-z ]{2,}"
@@ -48,7 +54,8 @@
 			</tr>
 			<tr>
 				<td>Highest Qualification</td>
-				<td><form:select path="highestQualification" items="${domainlist}" required="required"></form:select></td>
+				<td><form:select path="highestQualification"
+						items="${domainlist}" required="required"></form:select></td>
 			</tr>
 			<tr>
 				<td>Marks Obtained:</td>
@@ -71,19 +78,19 @@
 				<form:hidden path="status" value="Pending" />
 			</tr>
 			<c:if test="${pId eq null}">
-			<tr>
-				<td>Scheduled Program ID:</td>
-				<td><form:input path="scheduledProgramId" required="required" /> <form:errors
-						path="scheduledProgramId" /></td>
-			</tr>
+				<tr>
+					<td>Scheduled Program ID:</td>
+					<td><form:input path="scheduledProgramId" required="required" />
+						<form:errors path="scheduledProgramId" /></td>
+				</tr>
 			</c:if>
 			<tr>
-				<td colspan="2"><input  class="btn btn-default" type="submit" value="Submit Details"
-					onclick="return isBefore()"></td>
+				<td colspan="2"><input class="btn btn-default" type="submit"
+					value="Submit Details" onclick="return isBefore()"></td>
 			</tr>
 		</table>
 		<c:if test="${pId ne null}">
-		<form:hidden path="scheduledProgramId" value="${pId}" />
+			<form:hidden path="scheduledProgramId" value="${pId}" />
 		</c:if>
 		<!-- msg = scheduledProgramId passed as ModelandView attribute -->
 	</form:form>

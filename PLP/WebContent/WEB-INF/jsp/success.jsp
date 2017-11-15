@@ -8,27 +8,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Success</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="js/bootstrap.min.js">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="js/bootstrap.min.js">
+	
 </script>
 <script src="js/jquery-3.2.1.min.js">
+	
 </script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp">University Admission System</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="viewprgrms.htm">View Programmes</a></li>
-      <li><a href="viewstatus.htm">View Status</a></li>
-    </ul>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.jsp">University Admission
+				System</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="index.jsp">Home</a></li>
+			<li><a href="viewprgrms.htm">View Programmes</a></li>
+			<li><a href="viewstatus.htm">View Status</a></li>
+		</ul>
+	</div>
+	</nav>
 	<h1 class="bg-success">Your Application submitted successfully</h1>
-	<h2 class="bg-info" style="color:lightblue;">Application ID: ${applicant.applicationId}</h2>
+	<h2 class="bg-info" style="color: lightblue;">Application ID:
+		${applicant.applicationId}</h2>
 </body>
 </html>

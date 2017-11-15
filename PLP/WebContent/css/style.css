@@ -13,6 +13,13 @@ h2 {
 	color: navy;
 	background-color: white;
 }
+
+.container img{
+	width:900;
+	height:400;
+	margin: 20px;
+}
+
 body {
 	text-align: center;
 	float: center;
