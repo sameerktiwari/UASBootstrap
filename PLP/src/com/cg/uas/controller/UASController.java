@@ -1,5 +1,13 @@
 package com.cg.uas.controller;
 
+/************************************************************************************
+ * File:        UASController.java
+ * Package:     com.cg.uas.controller
+ * Description: Controller class for University Admission System
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import static com.cg.uas.utility.UASConstants.*;
 
 import java.sql.Date;
@@ -174,13 +182,14 @@ public class UASController {
 			return APPLICATION;
 		}
 		try {
-			ProgramsScheduled ps=service.getProgram(app.getScheduledProgramId());
+			ProgramsScheduled ps = service.getProgram(app
+					.getScheduledProgramId());
 		} catch (UniversityException exception) {
 			logger.error(exception);
 			model.addAttribute(ERROR_MESSAGE_NAME, exception.getMessage());
 			return APPLICATION;
 		}
-		try{
+		try {
 			Application ap = service.save(app);
 			model.addAttribute("applicant", ap);
 			return SUCCESS_PAGE;
