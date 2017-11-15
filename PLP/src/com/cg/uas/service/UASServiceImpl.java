@@ -1,5 +1,14 @@
 package com.cg.uas.service;
 
+/************************************************************************************
+ * File:        UASServiceImpl.java
+ * Package:     com.cg.uas.service
+ * Description: Implements the link between presentation layer and dao layer for
+ * 				 University Admission System
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import java.sql.Date;
 import java.util.List;
 
@@ -158,9 +167,10 @@ public class UASServiceImpl implements UASService {
 		return dao.modify(programsScheduled);
 
 	}
-	
+
 	@Override
-	public void checkUser(HttpSession session,String role) throws UniversityException{
-		dao.checkUser(session,role);
+	public void checkUser(HttpSession session, String role)
+			throws UniversityException {
+		dao.checkUser(session, role);
 	}
 }

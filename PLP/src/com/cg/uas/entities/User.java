@@ -6,12 +6,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /************************************************************************************
- * File:        User.java
- * Package:     com.cg.uas.entities
- * Description: Login credential of users which are applicable
- * Version:     1.0
- * Modifications:
- * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ * File: User.java 
+ * Package: com.cg.uas.entities 
+ * Description: Login credential of
+ * 				users which are applicable 
+ * Version: 1.0 
+ * Modifications: 
+ * Author: Group5 Date:14th-Nov-2017 Change Description:
  ************************************************************************************/
 @Entity
 @Table(name = "users")

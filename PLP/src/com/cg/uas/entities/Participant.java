@@ -40,7 +40,7 @@ public class Participant implements Serializable {
 		this.applicantId = applicantId;
 		this.scheduledProgramId = scheduledProgramId;
 	}
-	
+
 	public Participant() {
 		super();
 	}

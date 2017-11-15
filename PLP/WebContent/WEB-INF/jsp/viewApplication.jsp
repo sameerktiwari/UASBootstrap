@@ -42,7 +42,8 @@
 			<li class="active"><a href="viewprgrms.htm">View Programmes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="login.htm"><span class="glyphicon glyphicon-log-in"></span>
+			<li><a href="login.htm"><span
+					class="glyphicon glyphicon-log-in"></span>
 					${sessionScope.users.loginId}(Logout)</a></li>
 		</ul>
 	</div>
@@ -103,9 +104,11 @@
 			<form:hidden path="scheduledProgramId"
 				value="${applicant.scheduledProgramId}" />
 			<form:hidden path="status" value="${applicant.status}" />
+			<br>
 			<p>
 				Enter Date of Interview:
-				<form:input id="dateOfInterview" path="dateOfInterview" required="required"/>
+				<form:input id="dateOfInterview" path="dateOfInterview" type="date"
+					required="required" />
 				<input class="btn btn-default" type="submit"
 					value="Schedule Interview" onclick="return isAfter()">
 				<form:errors path="dateOfInterview" />

@@ -1,5 +1,12 @@
 package com.cg.uas.utility;
-
+/************************************************************************************
+ * File:        	QueryMapper.java
+ * Package:     	com.cg.uas.utility
+ * Description: 	Provides the query strings to the DAO layer whenever requested
+ * Version:     	1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 public interface QueryMapper {
 
 	public static final String users = "Select user from User user where user.loginId=:ploginid and"

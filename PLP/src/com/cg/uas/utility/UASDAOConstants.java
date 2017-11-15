@@ -1,5 +1,12 @@
 package com.cg.uas.utility;
-
+/************************************************************************************
+ * File:        UASDAOConstants.java
+ * Package:     com.cg.uas.utility
+ * Description: Provides constants to the DAO layer
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 public interface UASDAOConstants {
 	static String LOGGED_IN = "Logged in successfully";
 	static String RETREIEVE_PROGRAMS_SCHEDULED = "Retrieved Programs Scheduled";

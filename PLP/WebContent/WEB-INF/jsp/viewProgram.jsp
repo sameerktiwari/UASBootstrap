@@ -57,7 +57,7 @@
 			<th></th>
 		</tr>
 
-		<c:forEach items="${programList}" var="prog">
+		<c:forEach items="${programs}" var="prog">
 
 			<form:form action="apply.htm?pId=${prog.scheduledProgrammeId}"
 				method="post" modelAttribute="ProgramsScheduled">

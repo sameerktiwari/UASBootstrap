@@ -1,5 +1,14 @@
 package com.cg.uas.service;
 
+/************************************************************************************
+ * File:        UASService.java
+ * Package:     com.cg.uas.service
+ * Description: Works as an intermediate between presentation layer and dao layer for
+ * 				 University Admission System
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import java.sql.Date;
 import java.util.List;
 
@@ -128,6 +137,7 @@ public interface UASService {
 	 */
 	public ProgramsScheduled modify(ProgramsScheduled programsScheduled)
 			throws UniversityException;
-	
-	public void checkUser(HttpSession session,String role) throws UniversityException;
+
+	public void checkUser(HttpSession session, String role)
+			throws UniversityException;
 }

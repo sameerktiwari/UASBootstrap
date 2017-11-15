@@ -3,10 +3,8 @@ package com.cg.uas.entities;
 /************************************************************************************
  * File:        ProgramsScheduled.java
  * Package:     com.cg.uas.entities
- * Description: If a Program is there then when the program will be
- *         operating like same program can be scheduled in different year i.e.
- *         just like semester if we have programming in the 2010 the same course
- *         may be scheduled for 2011 if the university continues to fund it
+ * Description: It contains the information regarding the programs that are being 
+ * 				scheduled in the current time period
  * Version:     1.0
  * Modifications:
  * Author: Group5      Date: 14th-Nov-2017      Change Description:

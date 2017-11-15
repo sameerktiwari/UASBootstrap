@@ -64,26 +64,26 @@
 			<th>Date of Interview</th>
 			<th></th>
 		</tr>
-		<c:forEach items="${appList}" var="appli">
+		<c:forEach items="${apps}" var="applicant">
 			<form:form action="viewApplication.htm" method="post"
 				modelAttribute="Application">
 				<tr>
 					<td><form:hidden path="applicationId"
-							value="${appli.applicationId}" /> ${appli.applicationId}</td>
-					<td><form:hidden path="fullName" value="${appli.fullName}" />${appli.fullName}</td>
+							value="${applicant.applicationId}" /> ${applicant.applicationId}</td>
+					<td><form:hidden path="fullName" value="${applicant.fullName}" />${applicant.fullName}</td>
 					<td><form:hidden path="dateOfBirth"
-							value="${appli.dateOfBirth}" />${appli.dateOfBirth}</td>
+							value="${applicant.dateOfBirth}" />${applicant.dateOfBirth}</td>
 					<td><form:hidden path="highestQualification"
-							value="${appli.highestQualification}" />${appli.highestQualification}</td>
+							value="${applicant.highestQualification}" />${applicant.highestQualification}</td>
 					<td><form:hidden path="marksObtained"
-							value="${appli.marksObtained}" />${appli.marksObtained}</td>
-					<td><form:hidden path="email" value="${appli.email}" />${appli.email}</td>
-					<td><form:hidden path="goals" value="${appli.goals}" />${appli.goals}</td>
+							value="${applicant.marksObtained}" />${applicant.marksObtained}</td>
+					<td><form:hidden path="email" value="${applicant.email}" />${applicant.email}</td>
+					<td><form:hidden path="goals" value="${applicant.goals}" />${applicant.goals}</td>
 					<td><form:hidden path="scheduledProgramId"
-							value="${appli.scheduledProgramId}" />${appli.scheduledProgramId}</td>
-					<td><form:hidden path="status" value="${appli.status}" />${appli.status}</td>
+							value="${applicant.scheduledProgramId}" />${applicant.scheduledProgramId}</td>
+					<td><form:hidden path="status" value="${applicant.status}" />${applicant.status}</td>
 					<td><form:hidden path="dateOfInterview"
-							value="${appli.dateOfInterview}" />${appli.dateOfInterview}</td>
+							value="${applicant.dateOfInterview}" />${applicant.dateOfInterview}</td>
 					<td><input class="btn btn-default" type="submit"
 						value="View Application"></td>
 				</tr>

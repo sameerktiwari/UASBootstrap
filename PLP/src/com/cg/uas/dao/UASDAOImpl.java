@@ -9,7 +9,26 @@ package com.cg.uas.dao;
  * Modifications:
  * Author: Group5      Date: 14th-Nov-2017      Change Description:
  ************************************************************************************/
-import static com.cg.uas.utility.UASDAOConstants.*;
+import static com.cg.uas.utility.UASDAOConstants.APPLICATION_NOT_SUBMITTED;
+import static com.cg.uas.utility.UASDAOConstants.APPLICATION_SUBMITTED;
+import static com.cg.uas.utility.UASDAOConstants.GET_APPLICATION_STATUS;
+import static com.cg.uas.utility.UASDAOConstants.INCORRECT_PROGRAM_NAME;
+import static com.cg.uas.utility.UASDAOConstants.INTERVIEW_DATE_NOT_SCHEDULED;
+import static com.cg.uas.utility.UASDAOConstants.INTERVIEW_DATE_SCHEDULED;
+import static com.cg.uas.utility.UASDAOConstants.INVALID_PROGRAMID;
+import static com.cg.uas.utility.UASDAOConstants.LOGGED_IN;
+import static com.cg.uas.utility.UASDAOConstants.NO_APPLICANT_WITH_GIVEN_ID;
+import static com.cg.uas.utility.UASDAOConstants.NO_PROGRAMS_AVAILABLE;
+import static com.cg.uas.utility.UASDAOConstants.PARTICIPANT_ADDED;
+import static com.cg.uas.utility.UASDAOConstants.PARTICIPANT_NOT_ADDED;
+import static com.cg.uas.utility.UASDAOConstants.PROGRAM_DELETED;
+import static com.cg.uas.utility.UASDAOConstants.PROGRAM_NOT_DELETED;
+import static com.cg.uas.utility.UASDAOConstants.PROGRAM_NOT_UPDATED;
+import static com.cg.uas.utility.UASDAOConstants.PROGRAM_UPDATED;
+import static com.cg.uas.utility.UASDAOConstants.RETREIEVE_PROGRAMS_SCHEDULED;
+import static com.cg.uas.utility.UASDAOConstants.RETREIVE_APPLICATIONS_FOR_A_PROGRAMID;
+import static com.cg.uas.utility.UASDAOConstants.STATUS_NOT_UPDATED;
+import static com.cg.uas.utility.UASDAOConstants.STATUS_UPDATED;
 
 import java.sql.Date;
 import java.util.List;
@@ -41,11 +60,6 @@ public class UASDAOImpl implements UASDAO {
 	@PersistenceContext
 	EntityManager entityManager;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#validate(com.cg.uas.entities.Users)
-	 */
 	@Override
 	public boolean validate(User user) {
 		TypedQuery<User> query = entityManager.createQuery(QueryMapper.users,
@@ -58,11 +72,6 @@ public class UASDAOImpl implements UASDAO {
 		return users.isEmpty();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#viewProgrammes()
-	 */
 	@Override
 	public List<ProgramsScheduled> viewProgrammes() throws UniversityException {
 		try {
@@ -76,11 +85,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#getProgramsOffered(java.lang.String)
-	 */
 	@Override
 	public ProgramsOffered getProgramsOffered(String pname)
 			throws UniversityException {
@@ -98,11 +102,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#getStatus(int)
-	 */
 	@Override
 	public Application getStatus(int appid) throws UniversityException {
 		try {
@@ -119,11 +118,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#save(com.cg.uas.entities.Application)
-	 */
 	@Override
 	public Application save(Application app) throws UniversityException {
 
@@ -138,11 +132,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#getApplicant(java.lang.String)
-	 */
 	@Override
 	public List<Application> getApplicant(String programId)
 			throws UniversityException {
@@ -160,12 +149,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#modify(com.cg.uas.entities.Application,
-	 * java.lang.String)
-	 */
 	@Override
 	public Application modify(Application application, String status)
 			throws UniversityException {
@@ -181,12 +164,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#setInterview(com.cg.uas.entities.Application,
-	 * java.sql.Date)
-	 */
 	@Override
 	public Application setInterview(Application application,
 			Date dateOfInterview) throws UniversityException {
@@ -202,11 +179,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#addParticipant(com.cg.uas.entities.Participant)
-	 */
 	@Override
 	public Participant addParticipant(Participant ppt)
 			throws UniversityException {
@@ -223,11 +195,6 @@ public class UASDAOImpl implements UASDAO {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#getProgram(java.lang.String)
-	 */
 	@Override
 	public ProgramsScheduled getProgram(String programId)
 			throws UniversityException {
@@ -245,11 +212,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#deleteProgram(java.lang.String)
-	 */
 	@Override
 	public int deleteProgram(String scheduledProgrammeId)
 			throws UniversityException {
@@ -266,11 +228,6 @@ public class UASDAOImpl implements UASDAO {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.cg.uas.dao.IDAO#modify(com.cg.uas.entities.ProgramsScheduled)
-	 */
 	@Override
 	public ProgramsScheduled modify(ProgramsScheduled programsScheduled)
 			throws UniversityException {
@@ -285,11 +242,12 @@ public class UASDAOImpl implements UASDAO {
 			throw new UniversityException(PROGRAM_NOT_UPDATED);
 		}
 	}
-	
+
 	@Override
-	public void checkUser(HttpSession session,String role) throws UniversityException{
-		User user=(User)session.getAttribute("users");
-		if(!(role).equals(user.getRole())){
+	public void checkUser(HttpSession session, String role)
+			throws UniversityException {
+		User user = (User) session.getAttribute("users");
+		if (!(role).equals(user.getRole())) {
 			throw new UniversityException("Unauthorized access");
 		}
 	}

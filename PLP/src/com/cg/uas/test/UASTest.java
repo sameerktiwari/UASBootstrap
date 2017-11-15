@@ -1,5 +1,13 @@
 package com.cg.uas.test;
 
+/************************************************************************************
+ * File:        UASTest.java
+ * Package:     com.cg.uas.test
+ * Description: Performs Unit Testing on DAO layer operations
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 import static org.junit.Assert.assertEquals;
 
 import java.sql.Date;
@@ -26,61 +34,71 @@ import com.cg.uas.exception.UniversityException;
 public class UASTest {
 	@Autowired
 	private UASDAO dao;
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testValidate() {
-		User user=new User("sam","sam","mac");
+		User user = new User("sam", "sam", "mac");
 		assertEquals(false, dao.validate(user));
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
-	public void testSave() throws UniversityException{
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
-		Application returnapplication=dao.save(application);
-		assertEquals(returnapplication.getFullName(),application.getFullName());
+	public void testSave() throws UniversityException {
+		Application application = new Application("Sameer Tiwari",
+				Date.valueOf("1995-04-02"), "BTech", 88,
+				"Successful IT engineer", "sameerkt@gmail.com", "1001",
+				"Pending");
+		Application returnapplication = dao.save(application);
+		assertEquals(returnapplication.getFullName(), application.getFullName());
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testViewProgrammes() throws UniversityException {
-		List<ProgramsScheduled> programs=dao.viewProgrammes();
-		assertEquals(true, (programs.size()>0));
+		List<ProgramsScheduled> programs = dao.viewProgrammes();
+		assertEquals(true, (programs.size() > 0));
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testGetProgramsOffered() throws UniversityException {
-		ProgramsOffered program=dao.getProgramsOffered("Accounting");
-		assertEquals("Accounting",program.getProgramName());
+		ProgramsOffered program = dao.getProgramsOffered("Accounting");
+		assertEquals("Accounting", program.getProgramName());
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testGetStatus() throws UniversityException {
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
-		application=dao.save(application);
-		Application returnApplication=dao.getStatus(application.getApplicationId());
-		assertEquals("Pending",returnApplication.getStatus());
+		Application application = new Application("Sameer Tiwari",
+				Date.valueOf("1995-04-02"), "BTech", 88,
+				"Successful IT engineer", "sameerkt@gmail.com", "1001",
+				"Pending");
+		application = dao.save(application);
+		Application returnApplication = dao.getStatus(application
+				.getApplicationId());
+		assertEquals("Pending", returnApplication.getStatus());
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testModifyApplicationStatus() throws UniversityException {
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
-		application=dao.save(application);
-		Application returnApplication=dao.modify(application, "Accepted");
-		assertEquals("Accepted",returnApplication.getStatus());
+		Application application = new Application("Sameer Tiwari",
+				Date.valueOf("1995-04-02"), "BTech", 88,
+				"Successful IT engineer", "sameerkt@gmail.com", "1001",
+				"Pending");
+		application = dao.save(application);
+		Application returnApplication = dao.modify(application, "Accepted");
+		assertEquals("Accepted", returnApplication.getStatus());
 	}
-	
-	@Test(expected=UniversityException.class)
+
+	@Test(expected = UniversityException.class)
 	@Transactional
 	@Rollback(true)
 	public void testDeleteProgram() throws UniversityException {
@@ -92,28 +110,37 @@ public class UASTest {
 	@Transactional
 	@Rollback(true)
 	public void testSetInterview() throws UniversityException {
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
-		application=dao.save(application);
-		Application returnApplication=dao.setInterview(application, Date.valueOf("2018-01-01"));
-		assertEquals(Date.valueOf("2018-01-01"),returnApplication.getDateOfInterview());
+		Application application = new Application("Sameer Tiwari",
+				Date.valueOf("1995-04-02"), "BTech", 88,
+				"Successful IT engineer", "sameerkt@gmail.com", "1001",
+				"Pending");
+		application = dao.save(application);
+		Application returnApplication = dao.setInterview(application,
+				Date.valueOf("2018-01-01"));
+		assertEquals(Date.valueOf("2018-01-01"),
+				returnApplication.getDateOfInterview());
 	}
 
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testAddParticipant() throws UniversityException {
-		Participant participant=new Participant("sameer@capgemini.com",10,1002);
-		Participant returnParticipant=dao.addParticipant(participant);
+		Participant participant = new Participant("sameer@capgemini.com", 10,
+				1002);
+		Participant returnParticipant = dao.addParticipant(participant);
 		assertEquals("sameer@capgemini.com", returnParticipant.getEmailId());
 	}
-	
+
 	@Test
 	@Transactional
 	@Rollback(true)
 	public void testGetApplicant() throws UniversityException {
-		Application application=new Application("Sameer Tiwari", Date.valueOf("1995-04-02"), "BTech", 88, "Successful IT engineer", "sameerkt@gmail.com", "1001","Pending");
-		application=dao.save(application);
-		List<Application> applications=dao.getApplicant("1001");
-		assertEquals(true, (applications.size()>0));
+		Application application = new Application("Sameer Tiwari",
+				Date.valueOf("1995-04-02"), "BTech", 88,
+				"Successful IT engineer", "sameerkt@gmail.com", "1001",
+				"Pending");
+		application = dao.save(application);
+		List<Application> applications = dao.getApplicant("1001");
+		assertEquals(true, (applications.size() > 0));
 	}
 }

@@ -1,5 +1,12 @@
 package com.cg.uas.utility;
-
+/************************************************************************************
+ * File:        UASConstants.java
+ * Package:     com.cg.uas.utility
+ * Description: Provides constants to the Controller
+ * Version:     1.0
+ * Modifications:
+ * Author: Group5      Date: 14th-Nov-2017      Change Description:
+ ************************************************************************************/
 public interface UASConstants {
 	String APPLICANT_HOME = "applicant";
 	String APPLICATION = "application";

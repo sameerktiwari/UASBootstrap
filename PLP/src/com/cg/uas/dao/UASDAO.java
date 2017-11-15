@@ -142,6 +142,7 @@ public interface UASDAO {
 	public ProgramsScheduled modify(ProgramsScheduled programsScheduled)
 			throws UniversityException;
 
-	public void checkUser(HttpSession session,String role) throws UniversityException;
+	public void checkUser(HttpSession session, String role)
+			throws UniversityException;
 
 }
