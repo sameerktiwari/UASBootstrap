@@ -65,9 +65,11 @@
 						title="Enter valid Date of Birth" /> <form:errors
 						path="dateOfBirth" /></td>
 			</tr>
+			
 			<tr>
 				<td>Highest Qualification</td>
-				<td><form:select path="highestQualification"
+				<td>
+				<form:select path="highestQualification"
 						required="required">
 						<option value="">--Select--</option>
 						<option value="BTech">BTech</option>
